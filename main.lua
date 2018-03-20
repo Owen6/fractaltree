@@ -17,8 +17,22 @@ function love.update(dt)
 end
 
 function love.draw()
-	love.graphics.translate(400, love.graphics.getHeight())
+	love.graphics.translate(400, love.graphics.getHeight()/2)
+	love.graphics.push()
 	branch(100)
+	love.graphics.pop()
+	love.graphics.push()
+	love.graphics.rotate(math.pi/2)
+	branch(100)
+	love.graphics.pop()
+	love.graphics.push()
+	love.graphics.rotate(-math.pi/2)
+	branch(100)
+	love.graphics.pop()
+	love.graphics.push()
+	love.graphics.rotate(math.pi)
+	branch(100)
+	love.graphics.pop()
 end
 
 function branch(len)
